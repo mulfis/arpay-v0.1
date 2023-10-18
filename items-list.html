@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>List Rumah Perumahan</title>
+
+    <!-- CSS Bundle -->
+    <link rel="stylesheet" href="../static/css/output.css" />
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav
+      class="fixed flex justify-between items-center py-4 lg:px-6 h-14 w-screen backdrop-blur-sm bg-slate-700/30 z-10"
+    >
+      <a href="base.html" class="text-2xl font-semibold text-white pl-6"
+        >Artesis Permasih</a
+      >
+      <div class="lg:hidden pr-6">
+        <button class="relative group z-10" onclick="navHamburger()">
+          <div
+            class="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 ring-opacity-30 duration-200 shadow-md"
+          >
+            <div
+              class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+              id="navClose"
+            >
+              <div class="bg-white h-[2px] w-7"></div>
+              <div class="bg-white h-[2px] w-7"></div>
+              <div class="bg-white h-[2px] w-7"></div>
+
+              <!-- <div
+                class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12"
+              >
+                <div
+                  class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"
+                ></div>
+                <div
+                  class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"
+                ></div>
+              </div> -->
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="fixed lg:right-0 top-0 lg:flex" id="navItems">
+        <div
+          class="absolute flex flex-col p-4 pt-20 lg:pt-1 lg:flex-row h-screen w-96 bg-slate-100 right-0 top-0 lg:bg-transparent lg:h-auto lg:w-auto"
+        >
+          <a href="items-list.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              List Rumah
+            </button>
+          </a>
+          <a href="login.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              Rumahku
+            </button>
+          </a>
+          <a href="about.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              About & FAQ
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <main class="md:flex h-screen w-screen bg-slate-50">
+      <!-- Sidebar Start -->
+      <div class="flex h-full md:w-[250px] bg-slate-300">
+        <div class="m-auto text-center items-center justify-center">
+          <div class="p-1">
+            <p class="font-semibold">Search</p>
+            <input
+              class="w-52 h-8 rounded-lg border-2 border-gray-100 shadow-md"
+              type="text"
+              name="search"
+              id="search"
+            />
+          </div>
+          <div class="p-1">
+            <p class="font-semibold">Sort by</p>
+            <div class="m-auto p-2">
+              <p
+                class="px-4 w-52 h-8 rounded-t-xl bg-gray-200 border-2 border-gray-100 shadow-md"
+              >
+                Status Bayar:
+              </p>
+              <label for="bayar-semua">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Semua</p>
+                  <input
+                    type="radio"
+                    name="status-bayar"
+                    id="bayar-semua"
+                    value="bayar-semua"
+                    checked
+                  />
+                </div>
+              </label>
+              <label for="bayar-lunas">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Lunas</p>
+                  <input
+                    type="radio"
+                    name="status-bayar"
+                    id="bayar-lunas"
+                    value="bayar-lunas"
+                  />
+                </div>
+              </label>
+              <label for="bayar-belum-lunas">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Belum Lunas</p>
+                  <input
+                    type="radio"
+                    name="status-bayar"
+                    id="bayar-belum-lunas"
+                    value="bayar-belum-lunas"
+                  />
+                </div>
+              </label>
+              <label for="bayar-nunggak">
+                <div
+                  class="flex px-4 w-52 h-8 rounded-b-xl bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Ditangguhkan</p>
+                  <input
+                    type="radio"
+                    name="status-bayar"
+                    id="bayar-nunggak"
+                    value="bayar-nunggak"
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="p-2">
+              <p
+                class="px-4 w-52 h-8 rounded-t-xl bg-gray-200 border-2 border-gray-100 shadow-md"
+              >
+                Kondisi Mesin:
+              </p>
+              <label for="mesin-semua">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Semua</p>
+                  <input
+                    type="radio"
+                    name="status-mesin"
+                    id="mesin-semua"
+                    value="mesin-semua"
+                    checked
+                  />
+                </div>
+              </label>
+              <label for="mesin-bagus">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Mesin Bagus</p>
+                  <input
+                    type="radio"
+                    name="status-mesin"
+                    id="mesin-bagus"
+                    value="mesin-bagus"
+                  />
+                </div>
+              </label>
+              <label for="mesin-rusak">
+                <div
+                  class="flex px-4 w-52 h-8 rounded-b-xl bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Mesin Rusak</p>
+                  <input
+                    type="radio"
+                    name="status-mesin"
+                    id="mesin-rusak"
+                    value="mesin-rusak"
+                  />
+                </div>
+              </label>
+            </div>
+            <div class="p-2">
+              <p
+                class="px-4 w-52 h-8 rounded-t-xl bg-gray-200 border-2 border-gray-100 shadow-md"
+              >
+                Status Kependudukan:
+              </p>
+              <label for="rumah-semua">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Semua</p>
+                  <input
+                    type="radio"
+                    name="status-rumah"
+                    id="rumah-semua"
+                    value="rumah-semua"
+                    checked
+                  />
+                </div>
+              </label>
+              <label for="rumah-diisi">
+                <div
+                  class="flex px-4 w-52 h-8 bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Rumah Diisi</p>
+                  <input
+                    type="radio"
+                    name="status-rumah"
+                    id="rumah-diisi"
+                    value="rumah-diisi"
+                  />
+                </div>
+              </label>
+              <label for="rumah-kosong">
+                <div
+                  class="flex px-4 w-52 h-8 rounded-b-xl bg-white border-2 border-gray-100 shadow-md justify-between hover:cursor-pointer"
+                >
+                  <p>Rumah Kosong</p>
+                  <input
+                    type="radio"
+                    name="status-rumah"
+                    id="rumah-kosong"
+                    value="rumah-kosong"
+                  />
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Sidebar End -->
+      <!-- Content Start -->
+      <div class="w-full lg:w-4/5">
+        <div class="container m-auto px-10 pt-16">
+          <p class="text-2xl py-1 font-semibold text-sky-800">List Rumah</p>
+          <div class="hidden lg:flex">
+            <span class="w-1/6 text-lg"> No Rumah </span>
+            <span class="w-1/6 text-lg"> Foto </span>
+            <span class="w-1/6 text-lg"> Status Bayar </span>
+            <span class="w-1/6 text-lg"> Kondisi Mesin </span>
+            <span class="w-1/6 text-lg"> Kependudukan </span>
+            <span class="w-1/6"></span>
+          </div>
+          <div class="w-full h-0.5 bg-slate-800"></div>
+          <!-- Items Start -->
+          <div class="py-4">
+            <div
+              class="bg-white/30 backdrop-blur-sm w-full rounded-xl border-2 border-sky-400 shadow-md"
+            >
+              <div class="lg:flex text-center">
+                <span
+                  class="p-2 lg:w-1/6 lg:m-auto lg:pl-8 text-4xl font-medium text-slate-500"
+                >
+                  C01
+                </span>
+                <span class="p-2 lg:w-1/6 text-xl flex">
+                  <img
+                    class="m-auto lg:h-16 h-full"
+                    src="../_cloud/basic.jpg"
+                    alt=""
+                    srcset=""
+                  />
+                </span>
+                <p class="p-2 lg:w-1/6 lg:m-auto text-xl">
+                  <span class="lg:hidden">Pembayaran:</span>
+                  <span class="text-green-500"> Lunas </span>
+                </p>
+                <p class="p-2 lg:w-1/6 lg:m-auto text-xl">
+                  <span class="lg:hidden"> Mesin: </span>
+                  <span class="text-red-500"> Rusak </span>
+                </p>
+                <p class="p-2 lg:w-1/6 lg:m-auto text-xl">
+                  <span class="lg:hidden"> Status: </span>
+                  <span class="text-green-500"> Diisi </span>
+                </p>
+                <div class="p-2 lg:w-1/6 lg:m-auto">
+                  <a href="login.html">
+                    <button
+                      class="w-32 h-10 bg-slate-300 rounded-lg hover:bg-slate-200 hover:border-2 border-slate-300"
+                    >
+                      Selengkapnya
+                    </button>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- items End -->
+        </div>
+      </div>
+      <!-- Content End -->
+    </main>
+    <!-- JavaScript Here -->
+    <script>
+      function navHamburger() {
+        document.querySelector("#navItems").classList.toggle("right-[-200px]");
+      }
+    </script>
+    <!-- JavaScript End -->
+  </body>
+</html>
