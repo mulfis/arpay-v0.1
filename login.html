@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Bundle -->
+    <link rel="stylesheet" href="../static/css/output.css" />
+
+    <title>Log in Form</title>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav
+      class="fixed flex justify-between items-center py-4 lg:px-6 h-14 w-screen backdrop-blur-sm bg-slate-700/30 z-10"
+    >
+      <a href="base.html" class="text-2xl font-semibold text-white pl-6"
+        >Artesis Permasih</a
+      >
+      <div class="lg:hidden pr-6">
+        <button class="relative group z-10" onclick="navHamburger()">
+          <div
+            class="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 ring-opacity-30 duration-200 shadow-md"
+          >
+            <div
+              class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+              id="navClose"
+            >
+              <div class="bg-white h-[2px] w-7"></div>
+              <div class="bg-white h-[2px] w-7"></div>
+              <div class="bg-white h-[2px] w-7"></div>
+
+              <!-- <div
+           class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12"
+         >
+           <div
+             class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"
+           ></div>
+           <div
+             class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"
+           ></div>
+         </div> -->
+            </div>
+          </div>
+        </button>
+      </div>
+      <div class="fixed lg:right-0 top-0 lg:flex" id="navItems">
+        <div
+          class="absolute flex flex-col p-4 pt-20 lg:pt-1 lg:flex-row h-screen w-96 bg-slate-100 right-0 top-0 lg:bg-transparent lg:h-auto lg:w-auto"
+        >
+          <a href="items-list.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              List Rumah
+            </button>
+          </a>
+          <a href="login.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              Rumahku
+            </button>
+          </a>
+          <a href="about.html">
+            <button
+              class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+            >
+              About & FAQ
+            </button>
+          </a>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+    <main>
+      <div class="flex h-screen w-screen">
+        <div
+          style="background-image: url('../_cloud/basic.jpg')"
+          class="fixed w-full h-full bg-no-repeat bg-cover bg-center -z-20 contrast-50 saturate-50"
+        ></div>
+        <div
+          class="flex m-auto w-96 h-[400px] backdrop-blur-sm bg-slate-500/30 rounded-xl border-2 border-sky-100 shadow-md"
+        >
+          <div class="m-auto text-center">
+            <div class="p-6">
+              <p class="text-4xl text-white font-bold">Log in</p>
+            </div>
+            <div class="p-1">
+              <p class="text-left text-white">Nomor Rumah</p>
+              <input
+                class="w-52 h-8 pl-1 rounded-lg border-2 border-gray-100 shadow-md"
+                type="text"
+                name="house_id"
+                id="house_id"
+                value="c01"
+              />
+            </div>
+            <div class="p-1">
+              <p class="text-left text-white">Password</p>
+              <input
+                class="w-52 h-8 pl-1 rounded-lg border-2 border-gray-100 shadow-md"
+                type="password"
+                name="house_pass"
+                id="house_pass"
+                value="admin"
+              />
+            </div>
+            <div class="p-3">
+              <a href="about.html" class="text-blue-400 font-medium"
+                >Lupa password?</a
+              >
+            </div>
+            <div class="p-4">
+              <a href="user-details.html">
+                <button
+                  class="h-9 w-36 bg-slate-600 border-slate-600 text-white rounded-xl shadow-md hover:bg-slate-400 hover:border-2"
+                  type="submit"
+                >
+                  Masuk
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- JavaScript Here -->
+    <script>
+      function navHamburger() {
+        document.querySelector("#navItems").classList.toggle("right-[-200px]");
+      }
+    </script>
+    <!-- JavaScript End -->
+  </body>
+</html>

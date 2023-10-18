@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS Bundle -->
+    <link rel="stylesheet" href="../static/css/output.css" />
+
+    <title>User Details</title>
+  </head>
+  <body>
+    <!-- Navbar Start -->
+    <nav
+    class="fixed flex justify-between items-center py-4 lg:px-6 h-14 w-screen backdrop-blur-sm bg-slate-700/30 z-10"
+    >
+    <a href="base.html" class="text-2xl font-semibold text-white pl-6"
+      >Artesis Permasih</a
+    >
+    <div class="lg:hidden pr-6">
+      <button class="relative group z-10" onclick="navHamburger()">
+        <div
+          class="relative flex overflow-hidden items-center justify-center rounded-full w-[50px] h-[50px] transform transition-all bg-slate-700 ring-0 ring-gray-300 hover:ring-8 ring-opacity-30 duration-200 shadow-md"
+        >
+          <div
+            class="flex flex-col justify-between w-[20px] h-[20px] transform transition-all duration-300 origin-center overflow-hidden"
+            id="navClose"
+          >
+            <div class="bg-white h-[2px] w-7"></div>
+            <div class="bg-white h-[2px] w-7"></div>
+            <div class="bg-white h-[2px] w-7"></div>
+
+            <!-- <div
+        class="absolute items-center justify-between transform transition-all duration-500 top-2.5 -translate-x-10 group-focus:translate-x-0 flex w-0 group-focus:w-12"
+      >
+        <div
+          class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 rotate-0 delay-300 group-focus:rotate-45"
+        ></div>
+        <div
+          class="absolute bg-white h-[2px] w-5 transform transition-all duration-500 -rotate-0 delay-300 group-focus:-rotate-45"
+        ></div>
+      </div> -->
+          </div>
+        </div>
+      </button>
+    </div>
+    <div class="fixed lg:right-0 top-0 lg:flex" id="navItems">
+      <div
+        class="absolute flex flex-col p-4 pt-20 lg:pt-1 lg:flex-row h-screen w-96 bg-slate-100 right-0 top-0 lg:bg-transparent lg:h-auto lg:w-auto"
+      >
+        <a href="items-list.html">
+          <button
+            class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+          >
+            List Rumah
+          </button>
+        </a>
+        <a href="login.html">
+          <button
+            class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+          >
+            Rumahku
+          </button>
+        </a>
+        <a href="about.html">
+          <button
+            class="h-8 w-32 m-2 rounded-lg hover:border-2 border-sky-600 bg-white hover:bg-slate-200 transition-colors shadow-md"
+          >
+            About & FAQ
+          </button>
+        </a>
+      </div>
+    </div>
+    </nav>
+    <!-- Navbar End -->
+    <main>
+      <!-- Content Start -->
+      <div class="flex w-screen h-screen">
+        <div
+          style="background-image: url('../_cloud/basic.jpg')"
+          class="fixed w-full h-full bg-no-repeat bg-cover bg-center -z-20 contrast-50 saturate-50"
+        ></div>
+        <div class="flex flex-col m-auto fixed w-screen pt-52 text-center -z-20">
+          <p class="text-7xl md:text-9xl font-medium text-white">C01</p>
+          <div class="flex m-auto w-full md:w-2/3 pt-20 px-2 md:px-0">
+            <p class="w-1/3 text-md md:text-xl font-medium text-white">Status Bayar</p>
+            <p class="w-1/3 text-md md:text-xl font-medium text-white">Kondisi Mesin</p>
+            <p class="w-1/3 text-md md:text-xl font-medium text-white">Kependudukan</p>
+          </div>
+          <div class="flex m-auto w-full md:w-2/3 px-2 md:px-0">
+            <p class="w-1/3 text-xl md:text=3xl font-bold text-green-500">Lunas</p>
+            <p class="w-1/3 text-xl md:text=3xl font-bold text-red-500">Rusak</p>
+            <p class="w-1/3 text-xl md:text=3xl font-bold text-green-500">Diisi</p>
+          </div>
+        </div>
+      </div>
+      <div class="flex w-screen h-screen bg-sky-900/30 backdrop-blur-xl">
+        <div class="m-auto w-auto md:w-[700px] text-white">
+          <div class="p-4 pl-2">
+            <p class="text-xl md:text-2xl">Tagihan Anda Bulan ini:</p>
+          </div>
+          <div class="p-2 md:p-4 border-4 border-sky-500 rounded-lg text-sm md:text-lg">
+            <table>
+              <tr class="border-b-2 border-sky-500">
+                <td colspan="2"><p>Tenggat Waktu:</p></td>
+                <td><p>31 Oktober 2023</p></td>
+              </tr>
+              <tr>
+                <td class="md:pr-8"><p>Biaya Pemakaian</p></td>
+                <td class="md:pr-4"><p>=</p></td>
+                <td class="md:pr-8"><span></span></td>
+                <td class="md:pr-8"><p>x</p></td>
+                <td class="md:pr-8"><p>Rp.5.500,-</p></td>
+                <td class="md:pr-4"><p>=</p></td>
+                <td class="md:pr-8"><span></span></td>
+              </tr>
+              <tr>
+                <td><p>Biaya Beban</p></td>
+                <td><p>=</p></td>
+                <td colspan="3"><p>Rp.20.000,-</p></td>
+                <td><p>=</p></td>
+              </tr>
+              <tr>
+                <td colspan="5"><p>Total</p></td>
+                <td><p>=</p></td>
+                <td><span></span></td>
+              </tr>
+            </table>
+          </div>
+          <div class="flex md:my-4 w-auto md:w-[700px] justify-evenly">
+            <button
+              disabled="disabled"
+              class="p-2 bg-slate-500 rounded-lg border-slate-700 text-slate-300 shadow-md"
+            >
+              Bayar Sekarang
+            </button>
+            <button
+              class="p-2 bg-sky-500 rounded-lg border-slate-700 text-white shadow-md hover:bg-sky-400 transition-colors"
+            >
+              Pelajari lebih lanjut
+            </button>
+          </div>
+          <div>
+            <p class="text-red-400 font-medium">
+              *Saat ini pembayaran online belum tersedia
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="w-screen h-auto pb-40 bg-slate-100">
+        <div class="pl-4 md:pl-16 pt-28">
+          <p class="text-xl md:text-3xl">Riwayat Pembayaran Bulan Sebelumnya</p>
+        </div>
+        <div class="flex pt-4 lg:justify-center overflow-scroll overflow-x-scroll mx-4">
+          <table class="">
+            <tr class="">
+              <td class="px-8" rowspan="2"><p>Bulan</p></td>
+              <td class="px-7" rowspan="2"><p>Tanggal Pembayaran</p></td>
+              <td class="px-7" colspan="3">
+                <p>Kubik Air yang digunakan(/m<sup>3</sup>)</p>
+              </td>
+              <td class="px-7" rowspan="2"><p>Total Tagihan</p></td>
+              <td class="px-7" rowspan="2"><p>Uang yang dibayarkan</p></td>
+              <td class="px-7" rowspan="2"><p>Status Pembayaran</p></td>
+              <td class="" rowspan="2"><p>Sisa Pembayaran</p></td>
+            </tr>
+            <tr class="border-b-2 border-sky-500 pb-2">
+              <td class="px-5"><p>Awal</p></td>
+              <td class="px-5"><p>Akhir</p></td>
+              <td class="px-5"><p>Total</p></td>
+            </tr>
+            <!-- Database Start -->
+            <tr class="text-center">
+              <td><span>September</span></td>
+              <td><span>10/09/2023</span></td>
+              <td><span>01</s></td>
+              <td><span>06</span></td>
+              <td><span>05</span></td>
+              <td><p>Rp. <span>95000</span></p></td>
+              <td><p>Rp. <span>95000</span></p></td>
+              <td><span>Lunas</span></td>
+              <td>
+                <p>Rp. <span>0</span></p>
+              </td>
+            </tr>
+            <!-- Database End -->
+          </table>
+        </div>
+      </div>
+      <!-- Content End -->
+    </main>
+      <!-- JavaScript Here -->
+      <script>
+        function navHamburger() {
+          document.querySelector("#navItems").classList.toggle("right-[-200px]");
+        }
+      </script>
+      <!-- JavaScript End -->
+  </body>
+</html>
