@@ -1,3 +1,9 @@
+nvm this just initial project, just go to https://github.com/mulfis/arpay if you want to see newer version
+
+this just graves now
+
+<br>
+
 # Artesis Payment App
 The Last Stand Project, "Artesis Payment Application". My Campus Thesis Project.
 
